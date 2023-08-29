@@ -1,0 +1,64 @@
+body {
+    display: flex; 
+    flex direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.calculator {
+    background-color: #f0f0f0; /* Change the background to a lighter gray */
+    border-radius: 10px; /* Increase the border radius for a smoother look */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px; /* Increase the width to provide more space for buttons */
+    padding: 20px; /* Add some spacing around the content */
+    margin-top: 20px; /* Add top margin to center it on the screen */
+}
+
+.display {
+    font-size: 36px; /* Increase the text size in the display */
+    padding: 10px;
+    border: 1px solid #ccc; /* Change the bottom border to a full border */
+    margin-bottom: 10px; /* Add bottom margin to separate from button content */
+    background-color: #fff; /* White background for the display */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Add space between buttons */
+}
+
+.btn {
+    font-size: 24px; /* Increase the text size on the buttons */
+    padding: 20px 0;
+    cursor: pointer;
+    border: 1px solid #ccc; /* Add a border to the buttons */
+    background-color: #fff; /* White background for buttons */
+}
+
+.btn:hover {
+    background-color: #eee; /* Change the background color on hover */
+}
+
+#equals {
+    grid-column: span 4;
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+}
+
+#equals:hover {
+    background-color: #cc5500;
+}
+
+footer {
+    background-color: #333; /* Set a background color for the footer */
+    color: white; /* Set text color for the footer */
+    text-align: center; /* Center align the text */
+    padding: 10px; /* Add some padding to the footer */
+}
