@@ -64,37 +64,23 @@ function handleButtonClick(value) {
 
     display.innerText = currentInput;
 }
+// Event listener for numeric keypad input and operators (+, -, *, /, ., ^, =)
 document.addEventListener('keypress', (event) => {
     const numericKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const operatorKeys = ['+', '-', '*', '/', '.', '^', '='];
 
     if (numericKeys.includes(event.key)) {
-        event.preventDefault();
-        document.getElementById(event.key).click();
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del navegador
+        document.getElementById(event.key).click(); // Trigger click event for the numeric button
     } else if (event.key === 'Enter') {
         handleButtonClick('=');
-        event.preventDefault();
+        event.preventDefault(); 
     } else if (operatorKeys.includes(event.key)) {
-        event.preventDefault();
+        event.preventDefault(); 
         handleButtonClick(event.key);
-    } else if (event.key === 'Backspace') {
-        event.preventDefault();
-        handleBackspace();
+    } else {
+        // Handle other keys if needed
     }
 });
-
-function handleBackspace() {
-    if (resultShown) {
-        // Si se muestra un resultado, reinicia la entrada
-        currentInput = '0';
-        resultShown = false;
-    } else {
-        // Elimina el último carácter de la entrada actual
-        currentInput = currentInput.slice(0, -1) || '0';
-    }
-
-    display.innerText = currentInput;
-}
-
 // Automatically initialize the calculator display with 0
 display.innerText = currentInput;
